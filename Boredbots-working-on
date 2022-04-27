@@ -1,0 +1,20 @@
+    if msg.content == "search":
+      host = message.author
+      await message.channel.send("You have started a game of search. Please enter the user id of the next three players.")
+    try:
+      numone = await client.wait_for('message', check=lambda message: message.author == message.author, timeout=12)
+    except:
+      await message.channel.send("ERROR: TIME OUT")
+    await message.channel.send("Please enter the next player")
+    try:
+      numtwo = await client.wait_for('message', check=lambda message: message.author == message.author, timeout=12)
+    except:
+      await message.channel.send("ERROR: TIME OUT")
+    await message.channel.send("Please enter the next player")
+    try:
+      numthree = await client.wait_for('message', check=lambda message: message.author == message.author, timeout=12)
+    except:
+      await message.channel.send("ERROR: TIME OUT")
+    inter = await message.channel.send("Intermission: 5")
+    await message.channel.send("Intermission in 5 seconds")
+    
